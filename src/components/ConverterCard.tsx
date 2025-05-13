@@ -48,21 +48,21 @@ const ConverterCard = () => {
   };
 
   return (
-    <Card className="w-full max-w-md shadow-lg border-converter-green/20 bg-white/70 backdrop-blur-sm">
+    <Card className="w-full max-w-md shadow-lg border-converter-green/20 bg-black/40 backdrop-blur-sm">
       <CardHeader className="text-center pb-2">
-        <CardTitle className="text-2xl font-bold bg-gradient-to-r from-converter-green to-converter-dark-green bg-clip-text text-transparent">
+        <CardTitle className="text-2xl font-bold bg-gradient-to-r from-converter-green to-converter-light-green bg-clip-text text-transparent">
           YouTube → MTA:SA Converter
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-6">
         <div className="space-y-2">
-          <label htmlFor="youtube-url" className="text-sm font-medium text-gray-700">
+          <label htmlFor="youtube-url" className="text-sm font-medium text-gray-300">
             YouTube URL
           </label>
           <Input
             id="youtube-url"
             placeholder="https://www.youtube.com/watch?v=..."
-            className="border-converter-green/30 focus:ring-converter-green focus:border-converter-green"
+            className="border-converter-green/30 focus:ring-converter-green focus:border-converter-green bg-black/20 text-white"
             value={youtubeUrl}
             onChange={(e) => setYoutubeUrl(e.target.value)}
             disabled={isConverting}
@@ -88,7 +88,7 @@ const ConverterCard = () => {
         {mtaUrl && (
           <div className="pt-2 animate-slide-up">
             <div className="space-y-2">
-              <label htmlFor="mta-url" className="text-sm font-medium text-gray-700">
+              <label htmlFor="mta-url" className="text-sm font-medium text-gray-300">
                 MTA:SA Stereo Link
               </label>
               <div className="relative">
@@ -96,10 +96,10 @@ const ConverterCard = () => {
                   id="mta-url"
                   value={mtaUrl}
                   readOnly
-                  className="pr-10 bg-converter-green/10 border-converter-green/30"
+                  className="pr-10 bg-black/10 border-converter-green/30 text-white"
                 />
                 <button
-                  className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-converter-dark-green transition-colors"
+                  className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-converter-green transition-colors"
                   onClick={handleCopyLink}
                   title="Copy to clipboard"
                 >
@@ -107,7 +107,7 @@ const ConverterCard = () => {
                 </button>
               </div>
             </div>
-            <p className="text-xs text-gray-500 mt-2">
+            <p className="text-xs text-gray-400 mt-2">
               Paste this link in your MTA:SA client to play this track.
             </p>
           </div>

@@ -19,6 +19,9 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				sans: ['Roboto Condensed', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -67,8 +70,8 @@ export default {
 					green: '#6cff7f',
 					'light-green': '#a5ffb0',
 					'dark-green': '#40cc53',
-					'bg-gradient-from': '#f0fff2',
-					'bg-gradient-to': '#e0ffe5',
+					'bg-gradient-from': '#121212',
+					'bg-gradient-to': '#1a1a1a',
 				}
 			},
 			borderRadius: {
