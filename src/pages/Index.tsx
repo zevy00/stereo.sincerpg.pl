@@ -1,6 +1,7 @@
 
 import React from "react";
 import ConverterCard from "@/components/ConverterCard";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   return (
@@ -17,7 +18,10 @@ const Index = () => {
       <ConverterCard />
       
       <footer className="mt-8 text-center text-sm text-gray-500">
-        <p>Simply paste a YouTube URL and get a ready-to-use MTA:SA stereo link.</p>
+        <p className="mb-2">Simply paste a YouTube URL and get a ready-to-use MTA:SA stereo link.</p>
+        <Link to="/api" className="text-converter-green hover:underline">
+          API Documentation
+        </Link>
       </footer>
     </div>
   );
