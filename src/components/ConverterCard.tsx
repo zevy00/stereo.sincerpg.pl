@@ -102,13 +102,7 @@ const ConverterCard = () => {
       // Piosenka nie istnieje, skonwertuj ją
       toast.info("Converting your track...", { duration: 5000 });
       
-      const response = await fetch(`${API_URL}/convert`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ youtubeUrl }),
-      });
+      const response = await fetch("http://83.168.107.134:3001/convert", { ... });
 
       if (!response.ok) {
         const errorData = await response.json();
