@@ -5,8 +5,8 @@ import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 import { LinkIcon, ArrowRight, Music, History } from "lucide-react";
 
-// Adres API konwersji - zmień na swój adres serwera
-const API_URL = "https://your-conversion-api.com/api";
+// Adres API konwersji - serwer użytkownika
+const API_URL = "http://83.168.107.134:3001";
 
 interface ConvertedSong {
   id: string;
@@ -102,7 +102,13 @@ const ConverterCard = () => {
       // Piosenka nie istnieje, skonwertuj ją
       toast.info("Converting your track...", { duration: 5000 });
       
-      const response = await fetch("http://83.168.107.134:3001/convert", { ... });
+      const response = await fetch(`${API_URL}/convert`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ url: youtubeUrl })
+      });
 
       if (!response.ok) {
         const errorData = await response.json();
